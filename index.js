@@ -23,7 +23,7 @@ client.on('ready', () => {
           break;
         case 'roll':
             let roll = 0;
-            while(res == 0){
+            while(roll == 0){
                 roll = Math.floor(Math.random() * 6);
             }
             message.channel.send(`Dice : ${roll}`);
