@@ -26,10 +26,10 @@ client.on('ready', () => {
             while(res == 0){
                 roll = Math.floor(Math.random() * 6);
             }
-          console.log(`Dice : ${roll}`);
+            message.channel.send(`Dice : ${roll}`);
           break;
         default:
-          console.log('Sorry, command is not recognize');
+            message.channel.send('Sorry, command is not recognize');
       }
     
   });
