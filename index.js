@@ -22,9 +22,9 @@ client.on('ready', () => {
             message.channel.send('pong');
           break;
         case 'roll':
-            let res = 0;
+            let roll = 0;
             while(res == 0){
-                res = Math.floor(Math.random() * 6);
+                roll = Math.floor(Math.random() * 6);
             }
           console.log(`Dice : ${roll}`);
           break;
