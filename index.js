@@ -17,4 +17,4 @@ client.on("message", function(message) {
     }   
 });
 
-client.login(process.env.TOKENg);
+client.login(process.env.TOKEN);
