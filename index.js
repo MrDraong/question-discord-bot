@@ -10,9 +10,28 @@ client.on('ready', () => {
  });
   
  client.on('messageCreate', message => {
-    if (message.content === 'ping') {
-      message.channel.send('pong');
-    }
+    if (!message.content.startsWith(prefix) || message.author.bot) {
+        return
+    };
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift.toLowerCase();
+
+    switch (command) {
+        case 'ping':
+            message.channel.send('pong');
+          break;
+        case 'roll':
+            let res = 0;
+            while(res == 0){
+                res = Math.floor(Math.random() * 6);
+            }
+          console.log(`Dice : ${roll}`);
+          break;
+        default:
+          console.log('Sorry, command is not recognize');
+      }
+    
   });
   
 
