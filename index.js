@@ -1,6 +1,6 @@
-const Discord = require("discord.js");
+const {Client, Collection, MessageEmbed} = require("discord.js");
 
-const client = new Discord.Client();
+const client = new Client();
 const prefix = "!";
 
 client.on("message", function(message) {
