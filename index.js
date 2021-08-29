@@ -1,7 +1,8 @@
-const {Client, Collection, MessageEmbed} = require("discord.js");
+const {Client, Intents, Collection, MessageEmbed} = require("discord.js");
 
-const client = new Client();
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const prefix = "!";
+
 
 client.on("message", function(message) {
     if (message.author.bot) return;
