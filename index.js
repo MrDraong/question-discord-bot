@@ -3,19 +3,17 @@ const {Client, Intents, Collection, MessageEmbed} = require("discord.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const prefix = "!";
 
+require('dotenv').config();
 
-client.on("message", function(message) {
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
-
-    let commandBody = message.content.slice(prefix.length);
-    let args = commandBody.split(' ');
-    let command = args.shift().toLowerCase();
-
-    if (command === "ping") {
-         const timeTaken = Date.now() - message.createdTimestamp;
-    message.reply(`Pong! This message had a latency of ${timeTaken}ms.`);                   
-    }   
-});
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+ });
+  
+ client.on('messageCreate', message => {
+    if (message.content === 'ping') {
+      message.channel.send('pong');
+    }
+  });
+  
 
 client.login(process.env.TOKEN);
