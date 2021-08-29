@@ -15,7 +15,7 @@ client.on('ready', () => {
     };
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift.toLowerCase();
+    const command = args.shift().toLowerCase();
 
     switch (command) {
         case 'ping':
