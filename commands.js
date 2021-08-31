@@ -1,12 +1,14 @@
 const ping = require("./commands/ping");
 const roll = require("./commands/roll");
 const gif = require("./commands/gif");
+const test = require("./commands/test");
 const fs = require('fs');
 
 const commands = {
     ping,
     roll,
-    gif
+    gif,
+    test
 }
 const prefix = "!";
 
@@ -22,7 +24,6 @@ module.exports = async message => {
     for (const file of commandFiles) {
 	    checkAvailable.push(file.split(".")[0]);
     }
-    console.log(checkAvailable);
     
     /* delete the prefix and split args and command */
     const args = message.content.slice(prefix.length).trim().split(/ +/);
